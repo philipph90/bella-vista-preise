@@ -266,16 +266,32 @@ def eur(n):
     return f"{n:,.0f} €".replace(",", ".")
 
 
-def ntfy(text, titel, link):
+def ntfy(text, titel, link, prio="high", tags="palm_tree"):
     topic = os.environ.get("NTFY_TOPIC", "").strip()
     if not topic:
         log("Kein NTFY_TOPIC gesetzt, keine Handy-Nachricht.")
         return
     req = urllib.request.Request("https://ntfy.sh/" + urllib.parse.quote(topic), data=text.encode("utf-8"), method="POST",
-                                 headers={"Title": titel, "Priority": "high", "Tags": "palm_tree",
+                                 headers={"Title": titel, "Priority": prio, "Tags": tags,
                                           **({"Click": link} if link else {})})
     urllib.request.urlopen(req, timeout=20)
     log("Handy-Nachricht gesendet.")
+
+
+def zusammenfassung(daten):
+    """Kurze Nachricht mit den aktuellen Bestpreisen nach jeder Suche."""
+    erg = daten["ergebnis"]
+    zeilen = []
+    for g in GRUPPEN:
+        r = erg["gruppen"].get(g["key"], {})
+        p, e = r.get("pauschal"), r.get("getrennt")
+        teile = []
+        if p:
+            teile.append(f"Pauschal {eur(p['preis'])} ({datum(p['abflug'])[4:10]}–{datum(p['rueckkehr'])[4:10]})")
+        if e:
+            teile.append(f"einzeln {eur(e['preis'])}" + (" (älterer Preis)" if e.get("stand") else ""))
+        zeilen.append(f"{g['titel']}: " + (", ".join(teile) if teile else "nichts gefunden"))
+    return "\n".join(zeilen)
 
 
 def alarm_pruefen(daten, cfg):
@@ -340,6 +356,11 @@ def main():
     daten["alarm"] = cfg.get("alarm") or {}
     daten.pop("alarmMeldung", None)
     alarm_pruefen(daten, cfg)
+    if cfg.get("jedeSucheMelden", True):
+        try:
+            ntfy(zusammenfassung(daten), "Bella Vista: aktuelle Preise", os.environ.get("SEITE_URL", ""), prio="default", tags="sunny")
+        except Exception as e:
+            log("Handy-Nachricht fehlgeschlagen:", e)
     os.makedirs(os.path.dirname(DATA), exist_ok=True)
     json.dump(daten, open(DATA, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     log("Fertig.", "Fehler:" if erg["fehler"] else "", erg["fehler"] or "")

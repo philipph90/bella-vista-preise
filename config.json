@@ -1,4 +1,5 @@
 {
   "zeitraum": { "von": "2027-01-25", "bis": "2027-03-05" },
-  "alarm": { "woche": 760, "zehn": 1050 }
+  "alarm": { "woche": 760, "zehn": 1050 },
+  "jedeSucheMelden": true
 }
