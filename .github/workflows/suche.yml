@@ -1,0 +1,46 @@
+name: Preissuche
+
+on:
+  schedule:
+    # 7, 15 und 20 Uhr Wiener Zeit. GitHub rechnet in UTC:
+    - cron: "0 6,14,19 * * *"   # Winterzeit (MEZ = UTC+1)
+    - cron: "0 5,13,18 * * *"   # Sommerzeit (MESZ = UTC+2)
+  workflow_dispatch: {}          # "Run workflow" = sofort suchen
+
+permissions:
+  contents: write
+
+concurrency:
+  group: preissuche
+  cancel-in-progress: false
+
+jobs:
+  suche:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Browser installieren
+        run: |
+          pip install playwright==1.65.2 tzdata
+          python -m playwright install --with-deps chromium
+
+      - name: Preise suchen
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          CRON_PLAN: ${{ github.event.schedule }}
+          SEITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/
+        run: python suche.py
+
+      - name: Ergebnis speichern
+        if: always()
+        run: |
+          git config user.name "Preiswaechter"
+          git config user.email "preiswaechter@users.noreply.github.com"
+          git add docs/data.json
+          git diff --cached --quiet || (git commit -m "Preise $(date -u +%Y-%m-%dT%H:%M)Z" && git push)

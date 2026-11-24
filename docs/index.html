@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bella Vista Preise</title>
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Bella Vista Resort, Hurghada</h1>
+    <p class="sub">Flug ab Graz · 1 Person · 1 Zimmer</p>
+  </header>
+
+  <div class="alarm-banner" id="alarmBanner" hidden role="alert"></div>
+
+  <section class="card">
+    <h2>Stand der Preise</h2>
+    <div class="status" id="status">Preise werden geladen …</div>
+    <div class="status" id="zeitraum"></div>
+    <button type="button" class="big" id="neu">Seite neu laden</button>
+  </section>
+
+  <section class="card" id="erg-woche"></section>
+  <section class="card" id="erg-zehn"></section>
+
+  <section class="card">
+    <h2>Preisalarm</h2>
+    <p class="hint" id="alarmText"></p>
+  </section>
+
+  <footer>
+    <div>Die Preise werden jeden Tag um 7 Uhr, 15 Uhr und 20 Uhr automatisch geprüft, auch wenn Ihr Computer ausgeschaltet ist.</div>
+    <div>Bei „Flug und Hotel einzeln“ ist kein Transfer zum Hotel dabei, und die Verpflegung kann anders sein als bei der Pauschalreise. Bitte vor dem Buchen auf der Hotelseite nachsehen.</div>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
