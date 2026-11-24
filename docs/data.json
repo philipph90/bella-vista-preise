@@ -1,6 +1,6 @@
 {
  "ergebnis": {
-  "zeit": "2026-11-24T19:21:20+00:00",
+  "zeit": "2026-11-24T19:24:49+00:00",
   "von": "2026-11-26",
   "bis": "2027-06-30",
   "gruppen": {
@@ -13,17 +13,7 @@
      "notiz": "Corendon Airlines Europe · All Inclusive · Transfer inklusive",
      "url": "https://urlaub.check24.de/suche/angebot?airport=GRZ&transportType=flight&roomAllocation=A&departureDate=2026-12-16&returnDate=2026-12-23&days=8&page=1&pageArea=package&areaId=673&hotelId=8541&ds=h&offerSort=price&areaSort=topregion"
     },
-    "getrennt": {
-     "preis": 610,
-     "flugPreis": 225,
-     "hotelPreis": 385,
-     "abflug": "2026-12-16",
-     "rueckkehr": "2026-12-23",
-     "naechte": 7,
-     "notiz": "Flug: Direktflug · Corendon Airlines Europe · Hotel über Traveluro (55 € pro Nacht, nur Frühstück)",
-     "flugUrl": "https://www.google.com/travel/flights?q=Flights%20from%20GRZ%20to%20HRG%20on%202026-12-16%20through%202026-12-23&hl=de&curr=EUR",
-     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjqDxAMGBASBwjqDxAMGBcYBzICEAAqCQoFOgNFVVIaAA"
-    }
+    "getrennt": null
    },
    "zehn": {
     "pauschal": {
@@ -38,6 +28,8 @@
    }
   },
   "fehler": [
+   "1 Woche: kein Flugpreis bei Google Flüge",
+   "10 Tage: kein Flugpreis bei Google Flüge",
    "10 Tage: kein Hotelpreis bei Google Hotels"
   ]
  },
@@ -74,6 +66,17 @@
     "p": 1020,
     "e": null
    }
+  },
+  {
+   "zeit": "2026-11-24T19:24:49+00:00",
+   "woche": {
+    "p": 775,
+    "e": null
+   },
+   "zehn": {
+    "p": 1020,
+    "e": null
+   }
   }
  ],
  "alarm": {
@@ -81,7 +84,6 @@
   "zehn": 1050
  },
  "gemeldet": {
-  "woche": 610,
   "zehn": 1020
  }
 }
