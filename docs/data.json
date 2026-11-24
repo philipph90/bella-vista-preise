@@ -1,6 +1,6 @@
 {
  "ergebnis": {
-  "zeit": "2026-11-24T19:06:37+00:00",
+  "zeit": "2026-11-24T19:17:33+00:00",
   "von": "2026-11-26",
   "bis": "2027-06-30",
   "gruppen": {
@@ -14,37 +14,27 @@
      "url": "https://urlaub.check24.de/suche/angebot?airport=GRZ&transportType=flight&roomAllocation=A&departureDate=2026-12-16&returnDate=2026-12-23&days=8&page=1&pageArea=package&areaId=673&hotelId=8541&ds=h&offerSort=price&areaSort=topregion"
     },
     "getrennt": {
-     "preis": 708,
+     "preis": 610,
      "flugPreis": 225,
-     "hotelPreis": 483,
+     "hotelPreis": 385,
      "abflug": "2026-12-16",
      "rueckkehr": "2026-12-23",
      "naechte": 7,
-     "notiz": "Flug: Direktflug · Corendon Airlines Europe · Hotel über trivago DEALS (69 € pro Nacht)",
+     "notiz": "Flug: Direktflug · Corendon Airlines Europe · Hotel über trivago DEALS (55 € pro Nacht)",
      "flugUrl": "https://www.google.com/travel/flights?q=Flights%20from%20GRZ%20to%20HRG%20on%202026-12-16%20through%202026-12-23&hl=de&curr=EUR",
      "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjqDxAMGBASBwjqDxAMGBcYBzICEAAqCQoFOgNFVVIaAA"
     }
    },
    "zehn": {
     "pauschal": {
-     "preis": 1021,
+     "preis": 1020,
      "abflug": "2027-03-31",
      "rueckkehr": "2027-04-08",
      "naechte": 8,
      "notiz": "Corendon Airlines Europe · All Inclusive · Transfer inklusive",
      "url": "https://urlaub.check24.de/suche/angebot?airport=GRZ&transportType=flight&roomAllocation=A&departureDate=2027-03-31&returnDate=2027-04-08&days=9&page=1&pageArea=package&areaId=673&hotelId=8541&ds=h&offerSort=price&areaSort=topregion"
     },
-    "getrennt": {
-     "preis": 1278,
-     "flugPreis": 526,
-     "hotelPreis": 752,
-     "abflug": "2027-03-31",
-     "rueckkehr": "2027-04-08",
-     "naechte": 8,
-     "notiz": "Flug: Direktflug · Corendon Airlines Europe · Hotel über HolidayCheck.at (94 € pro Nacht)",
-     "flugUrl": "https://www.google.com/travel/flights?q=Flights%20from%20GRZ%20to%20HRG%20on%202027-03-31%20through%202027-04-08&hl=de&curr=EUR",
-     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjrDxADGB8SBwjrDxAEGAgYCDICEAAqCQoFOgNFVVIaAA"
-    }
+    "getrennt": null
    }
   },
   "fehler": []
@@ -60,21 +50,32 @@
     "p": 1021,
     "e": 1278
    }
+  },
+  {
+   "zeit": "2026-11-24T19:17:33+00:00",
+   "woche": {
+    "p": 775,
+    "e": 610
+   },
+   "zehn": {
+    "p": 1020,
+    "e": null
+   }
   }
  ],
  "alarm": {
   "woche": 760,
   "zehn": 1050
  },
- "alarmMeldung": {
-  "zeit": "2026-11-24T19:06:37+00:00",
-  "texte": [
-   "1 Woche: 708 € (Flug und Hotel einzeln, Mi, 16.12.2026 bis Mi, 23.12.2026). Ihre Grenze: 760 €.",
-   "10 Tage: 1.021 € (Pauschalreise, Mi, 31.03.2027 bis Do, 08.04.2027). Ihre Grenze: 1.050 €."
-  ]
- },
  "gemeldet": {
-  "woche": 708,
-  "zehn": 1021
+  "woche": 610,
+  "zehn": 1020
+ },
+ "alarmMeldung": {
+  "zeit": "2026-11-24T19:17:33+00:00",
+  "texte": [
+   "1 Woche: 610 € (Flug und Hotel einzeln, Mi, 16.12.2026 bis Mi, 23.12.2026). Ihre Grenze: 760 €.",
+   "10 Tage: 1.020 € (Pauschalreise, Mi, 31.03.2027 bis Do, 08.04.2027). Ihre Grenze: 1.050 €."
+  ]
  }
 }
