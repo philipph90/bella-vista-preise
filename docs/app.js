@@ -34,6 +34,7 @@ function zeigeGruppe(g, res) {
   const o2 = el("div", "opt"); const t2 = el("div", "opt-top");
   t2.append(el("span", "opt-name", "Flug und Hotel einzeln"), el("span", "opt-price", e ? eur(e.preis) : "–")); o2.append(t2);
   if (e) {
+    if (e.stand) o2.append(el("div", "opt-info", "Hinweis: Google hat bei der letzten Suche keine Preise geliefert. Dieser Preis ist vom " + new Date(e.stand).toLocaleString("de-AT", { dateStyle: "medium", timeStyle: "short" }) + " Uhr."));
     o2.append(el("div", "opt-info", "Flug " + eur(e.flugPreis) + " + Hotel " + eur(e.hotelPreis) + " · " + de(e.abflug) + " bis " + de(e.rueckkehr) + (e.notiz ? " · " + e.notiz : "")));
     const bt = el("div", "btns"); const k1 = knopf("Flug ansehen und buchen", e.flugUrl); const k2 = knopf("Hotel ansehen und buchen", e.hotelUrl, true);
     if (k1) bt.append(k1); if (k2) bt.append(k2); o2.append(bt);

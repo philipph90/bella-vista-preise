@@ -283,14 +283,15 @@ def alarm_pruefen(daten, cfg):
     treffer = []
     for g in GRUPPEN:
         grenze = (cfg.get("alarm") or {}).get(g["key"])
-        b = bester(daten["ergebnis"]["gruppen"].get(g["key"], {}))
+        r = daten["ergebnis"]["gruppen"].get(g["key"], {})
+        b = bester({k: v for k, v in r.items() if v and not v.get("stand")})  # nur frisch gefundene Preise
         if not grenze or not b or b["preis"] > grenze:
             gemeldet.pop(g["key"], None)
             continue
         if g["key"] in gemeldet and b["preis"] >= gemeldet[g["key"]]:
             continue
         gemeldet[g["key"]] = b["preis"]
-        art = "Flug und Hotel einzeln" if b is daten["ergebnis"]["gruppen"][g["key"]].get("getrennt") else "Pauschalreise"
+        art = "Flug und Hotel einzeln" if b is r.get("getrennt") else "Pauschalreise"
         treffer.append(f"{g['titel']}: {eur(b['preis'])} ({art}, {datum(b['abflug'])} bis {datum(b['rueckkehr'])}). Ihre Grenze: {eur(grenze)}.")
     if treffer:
         daten["alarmMeldung"] = {"zeit": daten["ergebnis"]["zeit"], "texte": treffer}
@@ -319,12 +320,22 @@ def main():
     von = z.get("von") or add_days(heute, 1)
     bis = z.get("bis") or add_days(heute, 212)
     daten = json.load(open(DATA, encoding="utf-8")) if os.path.exists(DATA) else {}
+    alt = (daten.get("ergebnis") or {}).get("gruppen") or {}
     erg = suche_alles(von, bis)
+    # Hat Google diesmal geblockt, den letzten Einzelpreis (mit Datum) stehen lassen, solange er noch passt
+    for g in GRUPPEN:
+        neu = erg["gruppen"].get(g["key"], {})
+        vorher = (alt.get(g["key"]) or {}).get("getrennt")
+        if not neu.get("getrennt") and vorher and vorher["abflug"] >= von and vorher["rueckkehr"] <= bis and vorher["abflug"] > heute:
+            vorher.setdefault("stand", (daten.get("ergebnis") or {}).get("zeit"))
+            neu["getrennt"] = vorher
+            log(f"{g['titel']}: Einzelpreis vom {vorher['stand']} übernommen")
     daten["ergebnis"] = erg
     eintrag = {"zeit": erg["zeit"]}
     for g in GRUPPEN:
         r = erg["gruppen"].get(g["key"], {})
-        eintrag[g["key"]] = {"p": r.get("pauschal") and r["pauschal"]["preis"], "e": r.get("getrennt") and r["getrennt"]["preis"]}
+        e = r.get("getrennt")
+        eintrag[g["key"]] = {"p": r.get("pauschal") and r["pauschal"]["preis"], "e": e["preis"] if e and not e.get("stand") else None}
     daten["verlauf"] = (daten.get("verlauf") or [])[-1200:] + [eintrag]
     daten["alarm"] = cfg.get("alarm") or {}
     daten.pop("alarmMeldung", None)
