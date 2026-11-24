@@ -183,11 +183,13 @@ def hotel(ctx, a, b):
         idx = next((k for k, z in enumerate(zeilen) if re.search(r"€|Gäste|^,$", z) or z.startswith("Kostenlos")), len(zeilen))
         kand = [z for z in zeilen[:idx] if not re.search(r"·|Optionen|Gesponsert|^\*", z)]
         anbieter = kand[-1] if kand else "Google Hotels"
+        verpfl = "nur Frühstück" if re.search(r"Frühstück", stueck) else ""
         if best is None or p < best[0]:
-            best = (p, anbieter)
+            best = (p, anbieter, verpfl)
     if not best:
         return None
-    return {"preis": best[0] * n, "notiz": f"Hotel über {best[1]} ({best[0]} € pro Nacht)"}
+    zusatz = ", " + best[2] if best[2] else ""
+    return {"preis": best[0] * n, "notiz": f"Hotel über {best[1]} ({best[0]} € pro Nacht{zusatz})"}
 
 
 # ---------------- Ablauf ----------------
@@ -219,16 +221,25 @@ def suche_alles(von, bis):
             a = pk["abflug"] if pk else von
             b = pk["rueckkehr"] if pk else add_days(von, g["days"][1] - 1)
             fl = ho = None
-            log(f"{g['titel']}: Google Flüge {a} – {b}")
-            try:
-                fl = flug(ctx, a, b)
-            except Exception as e:
-                erg["fehler"].append(f"Google Flüge: {e}")
-            log(f"{g['titel']}: Google Hotels {a} – {b}")
-            try:
-                ho = hotel(ctx, a, b)
-            except Exception as e:
-                erg["fehler"].append(f"Google Hotels: {e}")
+            for versuch in (1, 2):  # Google liefert manchmal beim ersten Mal nichts
+                if not fl:
+                    log(f"{g['titel']}: Google Flüge {a} – {b} (Versuch {versuch})")
+                    try:
+                        fl = flug(ctx, a, b)
+                    except Exception as e:
+                        erg["fehler"].append(f"Google Flüge: {e}")
+                if not ho:
+                    log(f"{g['titel']}: Google Hotels {a} – {b} (Versuch {versuch})")
+                    try:
+                        ho = hotel(ctx, a, b)
+                    except Exception as e:
+                        erg["fehler"].append(f"Google Hotels: {e}")
+                if fl and ho:
+                    break
+            if not fl:
+                erg["fehler"].append(f"{g['titel']}: kein Flugpreis bei Google Flüge")
+            if not ho:
+                erg["fehler"].append(f"{g['titel']}: kein Hotelpreis bei Google Hotels")
             if fl and ho:
                 res["getrennt"] = {"preis": fl["preis"] + ho["preis"], "flugPreis": fl["preis"], "hotelPreis": ho["preis"],
                                    "abflug": a, "rueckkehr": b, "naechte": naechte(a, b),
