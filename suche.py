@@ -168,6 +168,8 @@ def hotel(ctx, a, b):
         return {"preis": int(m.group(1).replace(".", "")), "notiz": "Hotel über Google Hotels"}
     i = min([x for x in (txt.find("Vorgestellte Optionen"), txt.find("Alle Optionen")) if x >= 0], default=-1)
     if i < 0:
+        k = txt.find("Bella Vista")
+        log("  Hotelseite ohne Preisliste:", repr(txt[max(0, k):max(0, k) + 700]))
         return None
     ende = txt.find("Ähnliche Hotels", i)
     teil = txt[i: ende if ende > 0 else i + 3000]
