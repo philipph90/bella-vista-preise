@@ -1,17 +1,17 @@
 {
  "ergebnis": {
-  "zeit": "2026-11-24T19:33:13+00:00",
+  "zeit": "2026-11-25T06:59:46+00:00",
   "von": "2027-01-25",
   "bis": "2027-03-05",
   "gruppen": {
    "woche": {
     "pauschal": {
-     "preis": 874,
-     "abflug": "2027-02-17",
-     "rueckkehr": "2027-02-24",
+     "preis": 873,
+     "abflug": "2027-02-24",
+     "rueckkehr": "2027-03-03",
      "naechte": 7,
-     "notiz": "Corendon Airlines Europe · All Inclusive · Transfer inklusive",
-     "url": "https://urlaub.check24.de/suche/angebot?airport=GRZ&transportType=flight&roomAllocation=A&departureDate=2027-02-17&returnDate=2027-02-24&days=8&page=1&pageArea=package&areaId=673&hotelId=8541&ds=h&offerSort=price&areaSort=topregion"
+     "notiz": "Corendon Airlines Europe · All Inclusive",
+     "url": "https://urlaub.check24.de/suche/angebot?airport=GRZ&transportType=flight&roomAllocation=A&departureDate=2027-02-24&returnDate=2027-03-03&days=8&page=1&pageArea=package&areaId=673&hotelId=8541&ds=h&offerSort=price&areaSort=topregion"
     },
     "getrennt": {
      "preis": 797,
@@ -22,22 +22,24 @@
      "naechte": 7,
      "notiz": "Flug: Direktflug · Corendon Airlines Europe · Hotel über Reserving (75 € pro Nacht)",
      "flugUrl": "https://www.google.com/travel/flights?q=Flights%20from%20GRZ%20to%20HRG%20on%202027-02-17%20through%202027-02-24&hl=de&curr=EUR",
-     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjrDxACGBESBwjrDxACGBgYBzICEAAqCQoFOgNFVVIaAA"
+     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjrDxACGBESBwjrDxACGBgYBzICEAAqCQoFOgNFVVIaAA",
+     "stand": "2026-11-24T19:33:13+00:00"
     }
    },
    "zehn": {
     "pauschal": {
-     "preis": 1069,
+     "preis": 1078,
      "abflug": "2027-02-21",
      "rueckkehr": "2027-03-01",
      "naechte": 8,
-     "notiz": "Flug mit 2 Umstiegen · Discover Airlines · All Inclusive · Transfer inklusive",
+     "notiz": "Flug mit 2 Umstiegen · All Inclusive · Transfer inklusive",
      "url": "https://urlaub.check24.de/suche/angebot?airport=GRZ&transportType=flight&roomAllocation=A&departureDate=2027-02-21&returnDate=2027-03-01&days=9&page=1&pageArea=package&areaId=673&hotelId=8541&ds=h&offerSort=price&areaSort=topregion"
     },
     "getrennt": null
    }
   },
   "fehler": [
+   "1 Woche: kein Hotelpreis bei Google Hotels",
    "10 Tage: kein Hotelpreis bei Google Hotels"
   ]
  },
@@ -96,11 +98,22 @@
     "p": 1069,
     "e": null
    }
+  },
+  {
+   "zeit": "2026-11-25T06:59:46+00:00",
+   "woche": {
+    "p": 873,
+    "e": null
+   },
+   "zehn": {
+    "p": 1078,
+    "e": null
+   }
   }
  ],
  "alarm": {
-  "woche": 760,
-  "zehn": 1050
+  "woche": 750,
+  "zehn": 1000
  },
  "gemeldet": {}
 }
