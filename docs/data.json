@@ -1,47 +1,53 @@
 {
  "ergebnis": {
-  "zeit": "2026-11-26T14:50:27+00:00",
+  "zeit": "2026-11-26T19:55:35+00:00",
   "von": "2027-01-25",
   "bis": "2027-03-05",
   "gruppen": {
    "woche": {
     "pauschal": {
-     "preis": 873,
-     "abflug": "2027-02-24",
-     "rueckkehr": "2027-03-03",
+     "preis": 858,
+     "abflug": "2027-02-17",
+     "rueckkehr": "2027-02-24",
      "naechte": 7,
-     "notiz": "Corendon Airlines Europe · All Inclusive",
-     "url": "https://urlaub.check24.de/suche/angebot?airport=GRZ&transportType=flight&roomAllocation=A&departureDate=2027-02-24&returnDate=2027-03-03&days=8&page=1&pageArea=package&areaId=673&hotelId=8541&ds=h&offerSort=price&areaSort=topregion"
+     "notiz": "Corendon Airlines Europe · All Inclusive · Transfer inklusive",
+     "url": "https://urlaub.check24.de/suche/angebot?airport=GRZ&transportType=flight&roomAllocation=A&departureDate=2027-02-17&returnDate=2027-02-24&days=8&page=1&pageArea=package&areaId=673&hotelId=8541&ds=h&offerSort=price&areaSort=topregion"
     },
     "getrennt": {
-     "preis": 797,
-     "flugPreis": 272,
+     "preis": 782,
+     "flugPreis": 257,
      "hotelPreis": 525,
      "abflug": "2027-02-17",
      "rueckkehr": "2027-02-24",
      "naechte": 7,
      "notiz": "Flug: Direktflug · Corendon Airlines Europe · Hotel über Reserving (75 € pro Nacht)",
      "flugUrl": "https://www.google.com/travel/flights?q=Flights%20from%20GRZ%20to%20HRG%20on%202027-02-17%20through%202027-02-24&hl=de&curr=EUR",
-     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjrDxACGBESBwjrDxACGBgYBzICEAAqCQoFOgNFVVIaAA",
-     "stand": "2026-11-24T19:33:13+00:00"
+     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjrDxACGBESBwjrDxACGBgYBzICEAAqCQoFOgNFVVIaAA"
     }
    },
    "zehn": {
     "pauschal": {
-     "preis": 1076,
+     "preis": 1078,
      "abflug": "2027-02-21",
      "rueckkehr": "2027-03-01",
      "naechte": 8,
      "notiz": "Flug mit 2 Umstiegen · All Inclusive",
      "url": "https://urlaub.check24.de/suche/angebot?airport=GRZ&transportType=flight&roomAllocation=A&departureDate=2027-02-21&returnDate=2027-03-01&days=9&page=1&pageArea=package&areaId=673&hotelId=8541&ds=h&offerSort=price&areaSort=topregion"
     },
-    "getrennt": null
+    "getrennt": {
+     "preis": 873,
+     "flugPreis": 361,
+     "hotelPreis": 512,
+     "abflug": "2027-02-21",
+     "rueckkehr": "2027-03-01",
+     "naechte": 8,
+     "notiz": "Flug:  · Lufthansa, Discover Airlines · Hotel über Stayforlong (64 € pro Nacht)",
+     "flugUrl": "https://www.google.com/travel/flights?q=Flights%20from%20GRZ%20to%20HRG%20on%202027-02-21%20through%202027-03-01&hl=de&curr=EUR",
+     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjrDxACGBUSBwjrDxADGAEYCDICEAAqCQoFOgNFVVIaAA"
+    }
    }
   },
-  "fehler": [
-   "1 Woche: kein Hotelpreis bei Google Hotels",
-   "10 Tage: kein Hotelpreis bei Google Hotels"
-  ]
+  "fehler": []
  },
  "verlauf": [
   {
@@ -153,11 +159,30 @@
     "p": 1076,
     "e": null
    }
+  },
+  {
+   "zeit": "2026-11-26T19:55:35+00:00",
+   "woche": {
+    "p": 858,
+    "e": 782
+   },
+   "zehn": {
+    "p": 1078,
+    "e": 873
+   }
   }
  ],
  "alarm": {
   "woche": 750,
   "zehn": 1000
  },
- "gemeldet": {}
+ "gemeldet": {
+  "zehn": 873
+ },
+ "alarmMeldung": {
+  "zeit": "2026-11-26T19:55:35+00:00",
+  "texte": [
+   "10 Tage: 873 € (Flug und Hotel einzeln, So, 21.02.2027 bis Mo, 01.03.2027). Ihre Grenze: 1.000 €."
+  ]
+ }
 }
