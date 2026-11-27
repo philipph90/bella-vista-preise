@@ -1,6 +1,6 @@
 {
  "ergebnis": {
-  "zeit": "2026-11-27T14:45:10+00:00",
+  "zeit": "2026-11-27T19:50:14+00:00",
   "von": "2027-01-25",
   "bis": "2027-03-05",
   "gruppen": {
@@ -50,7 +50,6 @@
    }
   },
   "fehler": [
-   "1 Woche: kein Flugpreis bei Google Flüge",
    "1 Woche: kein Hotelpreis bei Google Hotels",
    "10 Tage: kein Hotelpreis bei Google Hotels"
   ]
@@ -190,6 +189,17 @@
   },
   {
    "zeit": "2026-11-27T14:45:10+00:00",
+   "woche": {
+    "p": 858,
+    "e": null
+   },
+   "zehn": {
+    "p": 1068,
+    "e": null
+   }
+  },
+  {
+   "zeit": "2026-11-27T19:50:14+00:00",
    "woche": {
     "p": 858,
     "e": null
