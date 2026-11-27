@@ -1,6 +1,6 @@
 {
  "ergebnis": {
-  "zeit": "2026-11-27T07:00:03+00:00",
+  "zeit": "2026-11-27T14:45:10+00:00",
   "von": "2027-01-25",
   "bis": "2027-03-05",
   "gruppen": {
@@ -22,7 +22,8 @@
      "naechte": 7,
      "notiz": "Flug: Direktflug · Corendon Airlines Europe · Hotel über Reserving (75 € pro Nacht)",
      "flugUrl": "https://www.google.com/travel/flights?q=Flights%20from%20GRZ%20to%20HRG%20on%202027-02-17%20through%202027-02-24&hl=de&curr=EUR",
-     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjrDxACGBESBwjrDxACGBgYBzICEAAqCQoFOgNFVVIaAA"
+     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjrDxACGBESBwjrDxACGBgYBzICEAAqCQoFOgNFVVIaAA",
+     "stand": "2026-11-27T07:00:03+00:00"
     }
    },
    "zehn": {
@@ -49,6 +50,8 @@
    }
   },
   "fehler": [
+   "1 Woche: kein Flugpreis bei Google Flüge",
+   "1 Woche: kein Hotelpreis bei Google Hotels",
    "10 Tage: kein Hotelpreis bei Google Hotels"
   ]
  },
@@ -179,6 +182,17 @@
    "woche": {
     "p": 858,
     "e": 782
+   },
+   "zehn": {
+    "p": 1068,
+    "e": null
+   }
+  },
+  {
+   "zeit": "2026-11-27T14:45:10+00:00",
+   "woche": {
+    "p": 858,
+    "e": null
    },
    "zehn": {
     "p": 1068,
