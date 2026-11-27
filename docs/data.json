@@ -1,6 +1,6 @@
 {
  "ergebnis": {
-  "zeit": "2026-11-26T19:55:35+00:00",
+  "zeit": "2026-11-27T07:00:03+00:00",
   "von": "2027-01-25",
   "bis": "2027-03-05",
   "gruppen": {
@@ -27,11 +27,11 @@
    },
    "zehn": {
     "pauschal": {
-     "preis": 1078,
+     "preis": 1068,
      "abflug": "2027-02-21",
      "rueckkehr": "2027-03-01",
      "naechte": 8,
-     "notiz": "Flug mit 2 Umstiegen · All Inclusive",
+     "notiz": "Flug mit 2 Umstiegen · All Inclusive · Transfer inklusive",
      "url": "https://urlaub.check24.de/suche/angebot?airport=GRZ&transportType=flight&roomAllocation=A&departureDate=2027-02-21&returnDate=2027-03-01&days=9&page=1&pageArea=package&areaId=673&hotelId=8541&ds=h&offerSort=price&areaSort=topregion"
     },
     "getrennt": {
@@ -43,11 +43,14 @@
      "naechte": 8,
      "notiz": "Flug:  · Lufthansa, Discover Airlines · Hotel über Stayforlong (64 € pro Nacht)",
      "flugUrl": "https://www.google.com/travel/flights?q=Flights%20from%20GRZ%20to%20HRG%20on%202027-02-21%20through%202027-03-01&hl=de&curr=EUR",
-     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjrDxACGBUSBwjrDxADGAEYCDICEAAqCQoFOgNFVVIaAA"
+     "hotelUrl": "https://www.google.com/travel/hotels/entity/ChcIkq6L_6eHjdASGgsvZy8xdGhqNzY1ZhAB/prices?hl=de&gl=at&curr=EUR&ts=CAESBgoCCAMQABogCgIaABIaEhQKBwjrDxACGBUSBwjrDxADGAEYCDICEAAqCQoFOgNFVVIaAA",
+     "stand": "2026-11-26T19:55:35+00:00"
     }
    }
   },
-  "fehler": []
+  "fehler": [
+   "10 Tage: kein Hotelpreis bei Google Hotels"
+  ]
  },
  "verlauf": [
   {
@@ -170,19 +173,22 @@
     "p": 1078,
     "e": 873
    }
+  },
+  {
+   "zeit": "2026-11-27T07:00:03+00:00",
+   "woche": {
+    "p": 858,
+    "e": 782
+   },
+   "zehn": {
+    "p": 1068,
+    "e": null
+   }
   }
  ],
  "alarm": {
   "woche": 750,
   "zehn": 1000
  },
- "gemeldet": {
-  "zehn": 873
- },
- "alarmMeldung": {
-  "zeit": "2026-11-26T19:55:35+00:00",
-  "texte": [
-   "10 Tage: 873 € (Flug und Hotel einzeln, So, 21.02.2027 bis Mo, 01.03.2027). Ihre Grenze: 1.000 €."
-  ]
- }
+ "gemeldet": {}
 }
